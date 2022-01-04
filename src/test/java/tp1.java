@@ -14,7 +14,7 @@ public class tp1 {
     @Test
     public  void test1(){
 
-        
+
     WebDriver driver = new ChromeDriver();
     driver.get("https://www.amazon.fr");
     driver.manage().window().maximize();
@@ -24,7 +24,7 @@ public class tp1 {
     WebElement barreRecherche = driver.findElement(By.id("twotabsearchtextbox"));
     barreRecherche.sendKeys("machine a raclette");
     barreRecherche.sendKeys(Keys.ENTER);
-    //driver.quit();
+    driver.quit();
 
     }
 
@@ -55,6 +55,7 @@ public class tp1 {
         }
         WebElement addProduct = driver.findElement(By.cssSelector("[aria-labelledby='submit.add-to-cart-announce']"));
         addProduct.click();
+        driver.quit();
 
 
 
