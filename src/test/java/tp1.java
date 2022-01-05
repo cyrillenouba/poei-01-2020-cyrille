@@ -3,6 +3,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -34,7 +35,7 @@ public class tp1 {
     WebElement barreRecherche = driver.findElement(By.id("twotabsearchtextbox"));
     barreRecherche.sendKeys("machine a raclette");
     barreRecherche.sendKeys(Keys.ENTER);
-    driver.quit();
+
 
     }
 
@@ -60,9 +61,14 @@ public class tp1 {
         }
         WebElement addProduct = driver.findElement(By.cssSelector("[aria-labelledby='submit.add-to-cart-announce']"));
         addProduct.click();
+
+
+
+
+    }
+    @AfterMethod
+    public  void tearDown() {
         driver.quit();
-
-
 
     }
 }
