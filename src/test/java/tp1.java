@@ -19,11 +19,14 @@ public class tp1 {
 
 
         driver = new ChromeDriver();
+        //les methode findElement attende 2s avant de
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         driver.get("https://www.amazon.fr");
         driver.manage().window().maximize();
         //fermer cookies
         WebElement buttonCookies = driver.findElement(By.id("sp-cc-accept"));
         buttonCookies.click();
+
     }
 
 
@@ -46,19 +49,13 @@ public class tp1 {
         barreRecherche.sendKeys("machine a raclette");
         barreRecherche.sendKeys(Keys.ENTER);
 
-        try{
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        //yere is implicit wait
+
+
 
         WebElement firstElement = driver.findElement(By.cssSelector("[data-cel-widget='search_result_1']"));
         firstElement.click();
-        try{
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+      //
         WebElement addProduct = driver.findElement(By.cssSelector("[aria-labelledby='submit.add-to-cart-announce']"));
         addProduct.click();
 
