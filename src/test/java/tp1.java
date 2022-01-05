@@ -5,12 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.List;
 
 public class tp1 {
 
@@ -76,6 +78,38 @@ wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("ul.hmen
 driver.findElement(By.cssSelector("ul.hmenu-visible>li:nth-child(3)")).click();
 
     }
+
+    @Test
+    public void testMultipleElements(){
+
+        //ArranreActAction
+
+        int expectedNumberOfResult = 60;
+        String keyword = "machine a raclette";
+        int timeoutSearchLoad=10;
+        By searchBarSelector = By.id("twotabsearchtextbox");
+        By searchResultSelector = By.cssSelector("[data-component-type='s-search-result']");
+
+
+
+        //action
+
+        WebElement barreRecherche = driver.findElement(searchBarSelector);
+        barreRecherche.sendKeys(keyword + Keys.ENTER);
+
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(timeoutSearchLoad)) ;
+        wait.until(ExpectedConditions.visibilityOfElementLocated(searchResultSelector));
+
+        List<WebElement> listeDeResultat = driver.findElements(searchResultSelector);
+        //listeDeResultat.get(0).click();
+
+//assert
+
+        Assert.assertEquals(listeDeResultat.size(),expectedNumberOfResult,"the number of search is no correct");
+
+    }
+
+
     @AfterMethod
     public  void tearDown() {
         driver.quit();
