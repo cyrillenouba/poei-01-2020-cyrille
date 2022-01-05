@@ -22,7 +22,7 @@ public class tp1 {
 
         driver = new ChromeDriver();
         //attends que l'element soit present dans le code html
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+      //  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         driver.get("https://www.amazon.fr");
         driver.manage().window().maximize();
         //fermer cookies
@@ -72,7 +72,7 @@ driver.findElement(By.id("nav-hamburger-menu")).click();
 WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10)) ;
 wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".hmenu-item[data-menu-id='10']")));
 driver.findElement(By.cssSelector(".hmenu-item[data-menu-id='10']")).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("ul.hmenu-visible>li:nth-child(3)")));
+wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("ul.hmenu-visible>li:nth-child(3)")));
 driver.findElement(By.cssSelector("ul.hmenu-visible>li:nth-child(3)")).click();
 
     }
