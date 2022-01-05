@@ -3,6 +3,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
@@ -19,7 +21,7 @@ public class tp1 {
 
 
         driver = new ChromeDriver();
-        //les methode findElement attende 2s avant de
+        //attends que l'element soit present dans le code html
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         driver.get("https://www.amazon.fr");
         driver.manage().window().maximize();
@@ -61,6 +63,17 @@ public class tp1 {
 
 
 
+
+    }
+    @Test
+    public  void testLivres(){
+
+driver.findElement(By.id("nav-hamburger-menu")).click();
+WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10)) ;
+wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".hmenu-item[data-menu-id='10']")));
+driver.findElement(By.cssSelector(".hmenu-item[data-menu-id='10']")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("ul.hmenu-visible>li:nth-child(3)")));
+driver.findElement(By.cssSelector("ul.hmenu-visible>li:nth-child(3)")).click();
 
     }
     @AfterMethod
