@@ -46,7 +46,7 @@ public class UberEatsTests {
         By burgerSelector = By.cssSelector("img[alt='Burgers']");
         By searchResultKmarcelSelector = By.cssSelector("a[href='/fr/store/king-marcel-nanterre/07TTIgUiQPWyz4uq4_H35w'] > h3");
         By burgerMArcelSelector = By.cssSelector("img[alt='Le Marcel Jackson']");
-        By validateBurgerButton = By.cssSelector(".b8.b9.ba.bb.bc.bd.dh.ah.bf.bg.b0.bh.bi.bj.bk.bl.bm.bn.bo");
+        By validateBurgerButton = By.cssSelector(".spacer._24 + button.b8");
         //.spacer._24 + button.b8 (another selector)
         By cart = By.cssSelector(".ia.ch");
 
