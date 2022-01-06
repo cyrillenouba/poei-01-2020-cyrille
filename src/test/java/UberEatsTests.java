@@ -22,7 +22,7 @@ public class UberEatsTests {
     @BeforeMethod
     public void setup(){
 
-       String cookieeSelector =".ah.gg >button:nth-child(5)";
+       String cookieeSelector ="#cookie-banner button.bj";
 
         driver = new ChromeDriver();
         driver.get("https://www.ubereats.com");
@@ -44,7 +44,7 @@ public class UberEatsTests {
         By searchBarSelector = By.id("location-typeahead-home-input");
         By searchAdressList = By.id("location-typeahead-home-menu");
         By burgerSelector = By.cssSelector("img[alt='Burgers']");
-        By searchResultKmarcelSelector = By.cssSelector("a[href*='king-marcel']>h3");
+        By searchResultKmarcelSelector = By.cssSelector("a[href='/fr/store/king-marcel-nanterre/07TTIgUiQPWyz4uq4_H35w'] > h3");
         By burgerMArcelSelector = By.cssSelector("img[alt='Le Marcel Jackson']");
         By validateBurgerButton = By.cssSelector(".b8.b9.ba.bb.bc.bd.dh.ah.bf.bg.b0.bh.bi.bj.bk.bl.bm.bn.bo");
         //.spacer._24 + button.b8 (another selector)
@@ -77,7 +77,7 @@ public class UberEatsTests {
         wait.until(ExpectedConditions.visibilityOfElementLocated(validateBurgerButton));
         WebElement validateBurger = driver.findElement(validateBurgerButton);
         validateBurger.click();
-        
+
 
         wait.until(ExpectedConditions.invisibilityOf(validateBurger));
 
