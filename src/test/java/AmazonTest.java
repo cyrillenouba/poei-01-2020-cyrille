@@ -28,15 +28,18 @@ public class AmazonTest {
 
         MainPage mainPage = new MainPage(driver);
         mainPage.searchProduct(productName);
+        SearchResultPage searchResultPage=new SearchResultPage(driver);
+        searchResultPage.openResult(1);
 
     }
+
     @Test
 
     public void machineAracletteTest(){
         //Arrange
 
         String productName = "Machine a raclette";
-
+//ACt
         MainPage mainPage = new MainPage(driver);
         mainPage.searchProduct(productName);
 
