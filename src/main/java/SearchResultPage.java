@@ -5,4 +5,6 @@ import org.openqa.selenium.WebDriver;
     public SearchResultPage(WebDriver driver){
         this.driver=driver;
     }
+
+
 }
