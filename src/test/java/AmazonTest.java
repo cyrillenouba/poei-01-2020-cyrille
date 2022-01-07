@@ -17,6 +17,7 @@ public class AmazonTest {
         driver.manage().window().maximize();
         driver.findElement(By.id("sp-cc-accept")).click();
 
+
     }
 
     @Test
@@ -30,6 +31,10 @@ public class AmazonTest {
         mainPage.searchProduct(productName);
         SearchResultPage searchResultPage=new SearchResultPage(driver);
         searchResultPage.openResult(1);
+
+        PruductPage pruductPage = new PruductPage(driver);
+        pruductPage.addToCart();
+        pruductPage.noCoverrage();
 
     }
 
