@@ -1,10 +1,7 @@
-package PageObjects.amazon;
+package pageobjects.amazon;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 public class CartPage {
     WebDriver driver;

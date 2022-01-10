@@ -1,4 +1,4 @@
-package PageObjects.amazon;
+package pageobjects.amazon;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +14,7 @@ By cartButtonSelector = By.id("nav-cart");
     public void openCart(){
         driver.findElement(cartButtonSelector).click();
 
-        CartPage cartPage = new CartPage(driver);
+
 
     }
 }

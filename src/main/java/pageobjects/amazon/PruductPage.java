@@ -1,4 +1,4 @@
-package PageObjects.amazon;
+package pageobjects.amazon;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
