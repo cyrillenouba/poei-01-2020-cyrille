@@ -50,8 +50,6 @@ public class AppleTests {
         String totalPrice = cartPage.getTotal();
 
 
-        System.out.println(cartPage.getProductPrice(0));
-        System.out.println("ecpectedprice"+expectedPrice);
         Assert.assertEquals(productName, expectedName);
         Assert.assertTrue(cartTitle.contains(expectedPrice), "The Cart price Title is not the same");
         Assert.assertTrue(productPrice.contains(expectedPrice), "The Product price is not the same");
