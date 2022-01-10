@@ -16,10 +16,12 @@ public class AppleTests {
         driver = new ChromeDriver();
         driver.get("https://www.apple.com/fr");
         driver.manage().window().maximize();
-        //driver.findElement(By.id("sp-cc-accept")).click();
+
 
 
     }
+
+    @Test
 
     public void iphonePurschase(){
         //Arrange
@@ -28,11 +30,11 @@ public class AppleTests {
 
 
     }
-    @AfterMethod
+    /*@AfterMethod
     public void teardown(){
 
         driver.quit();
-    }
+    }*/
 
 
 }
