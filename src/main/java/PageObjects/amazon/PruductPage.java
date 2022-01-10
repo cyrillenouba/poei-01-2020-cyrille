@@ -1,3 +1,5 @@
+package PageObjects.amazon;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,10 +18,10 @@ public class PruductPage {
     By addToCartbuttonSelector = By.id("add-to-cart-button");
     By addWarrantyButtonSelector = By.cssSelector("#attachSiAddCoverage input");
 
-    By noCoverageButton = By.id("attachSiNoCoverage");
+    By noCoverageButton = By.cssSelector("#attachSiNoCoverage input");
     By confirmatioImageSelector = By.id("add-to-cart-confirmation-image");
-    int timeoutSideBar = 10;
-   int  timeoutCarButton=3;
+    int timeoutSideBar = 3;
+   int  timeoutCarButton=10;
 
 
 

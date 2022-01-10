@@ -1,3 +1,5 @@
+package PageObjects.amazon;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -23,8 +25,12 @@ public class MainPage {
         driver.findElement(searchBArSelector).sendKeys(productName + Keys.ENTER);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSearch)) ;
         wait.until(ExpectedConditions.visibilityOfElementLocated(searchResultSelector));
+        //PageObjects.amazon.SearchResultPage searchResultPage=new PageObjects.amazon.SearchResultPage(driver);
+       // searchResultPage.openResult(0);
+
 
     }
 }
+
 
 
