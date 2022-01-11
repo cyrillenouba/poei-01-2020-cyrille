@@ -2,6 +2,7 @@
 #
 # Check https://circleci.com/docs/2.0/language-java/ for more details
 #
+#test
 version: 2.1
 executors:
   machine-executor:
