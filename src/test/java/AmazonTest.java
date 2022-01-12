@@ -1,3 +1,7 @@
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobjects.amazon.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -5,6 +9,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import javax.swing.*;
+import java.time.Duration;
 
 public class AmazonTest {
 
@@ -20,37 +27,26 @@ public class AmazonTest {
 
     }
 
-    @Test
+@Test
 
-    public void laptopAddToCartPriceTest(){
-        //Arrange
+public void hoverTest() throws InterruptedException {
 
-        String productName = "HP Chromebook x360 14a-ca0000sf";
-         String expectedPrice="369,00 €";
+       By buttonSelector = By.id("nav-link-accountList");
 
-        MainPage mainPage = new MainPage(driver);
-        mainPage.searchProduct(productName);
 
-        SearchResultPage searchResultPage=new SearchResultPage(driver);
-        searchResultPage.openResult(0);
+    Actions hover = new Actions(driver);
+    WebElement button = driver.findElement(buttonSelector);
 
-       PruductPage pruductPage = new PruductPage(driver);
-        pruductPage.addToCart();
-        pruductPage.noCoverrage();
+    hover.moveToElement(button);
+    hover.perform();
 
-        ConfirmationAddToCartPage confirmationAddToCartPage = new ConfirmationAddToCartPage(driver);
-        confirmationAddToCartPage.openCart();
+    By myAccountSelector = By.cssSelector("#nav-al-your-account .nav-title + a");
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+    wait.until(ExpectedConditions.elementToBeClickable(myAccountSelector)).click();
 
-        CartPage cartPage = new CartPage(driver);
-        cartPage.getProductPrice(0);
-        cartPage.getActiveCarSubtotal();
-        cartPage.getBuyboxCartSubtotal();
+    Thread.sleep(1000);
 
-//Assert
-        //Assert.assertEquals(cartPage.getProductPrice(0),expectedPrice);
-
-    }
-
+}
 
     @AfterMethod
     public void teardown(){
